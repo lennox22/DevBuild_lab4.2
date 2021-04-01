@@ -5,15 +5,52 @@ namespace Lab4._2MovieList
 {
     class MoviesDB
     {
-        public string title;                //creating the variables
-        public int runTime;
-        public int year;
-        public bool scifi;
-        public bool animated;
-        public bool action;
-        public bool comedy;
-        public bool superhero;
-        public int rating;
+        private string title;                //creating the variables
+        private int runTime;
+        private int year;
+        private bool scifi;
+        private bool animated;
+        private bool action;
+        private bool comedy;
+        private bool superhero;
+        private int rating;
+
+        public int getRating()
+        {
+            return rating;
+        }
+        public bool getSuperhero()
+        {
+            return superhero;
+        }
+        public bool getComedy()
+        {
+            return comedy;
+        }
+        public bool getAction()
+        {
+            return action;
+        }
+        public bool getAnimated()
+        {
+            return animated;
+        }
+        public bool getScifi()
+        {
+            return scifi;
+        }
+        public int getYear()
+        {
+            return year;
+        }
+        public int getRunTime()
+        {
+            return runTime;
+        }
+        public string getTitle()
+        {
+            return title;
+        }
 
         public MoviesDB(string name, int length, int age, bool scienceFantasy, bool cartoon, bool booms, bool laugh, bool capes, int stars)
         {
@@ -174,7 +211,7 @@ namespace Lab4._2MovieList
             foreach ( MoviesDB runtime in movieList)    //cycle through the list
             {
                 
-                Console.Write($"\n{counter} - {runtime.title} - {runtime.runTime}mins");  //display the list
+                Console.Write($"\n{counter} - {runtime.getTitle()} - {runtime.getRunTime()}mins");  //display the list
                 counter++;                                           //increment the menu item
             }
         }
@@ -184,7 +221,7 @@ namespace Lab4._2MovieList
             int counter = 1;
             foreach (MoviesDB item in movieList)  //cycle through list
             {
-                Console.Write($"\n{counter} - {item.title} - {item.year}"); //display the movie and the year it came out
+                Console.Write($"\n{counter} - {item.getTitle()} - {item.getYear()}"); //display the movie and the year it came out
                 counter++;
             }
         }
@@ -199,9 +236,9 @@ namespace Lab4._2MovieList
                 case 1:
                     foreach (MoviesDB item in movieList)
                     {
-                        if(item.scifi == true)
+                        if(item.getScifi() == true)
                         {
-                            Console.Write($"\n{counter} - {item.title}");
+                            Console.Write($"\n{counter} - {item.getTitle()}");
                             counter++;
                         }
                     }
@@ -209,9 +246,9 @@ namespace Lab4._2MovieList
                 case 2:
                     foreach (MoviesDB item in movieList)
                     {
-                        if (item.animated == true)
+                        if (item.getAnimated() == true)
                         {
-                            Console.Write($"\n{counter} - {item.title}");
+                            Console.Write($"\n{counter} - {item.getTitle()}");
                             counter++;
                         }
                     }
@@ -219,9 +256,9 @@ namespace Lab4._2MovieList
                 case 3:
                     foreach (MoviesDB item in movieList)
                     {
-                        if (item.action == true)
+                        if (item.getAction() == true)
                         {
-                            Console.Write($"\n{counter} - {item.title}");
+                            Console.Write($"\n{counter} - {item.getTitle()}");
                             counter++;
                         }
                     }
@@ -229,9 +266,9 @@ namespace Lab4._2MovieList
                 case 4:
                     foreach (MoviesDB item in movieList)
                     {
-                        if (item.comedy == true)
+                        if (item.getComedy() == true)
                         {
-                            Console.Write($"\n{counter} - {item.title}");
+                            Console.Write($"\n{counter} - {item.getTitle()}");
                             counter++;
                         }
                     }
@@ -239,9 +276,9 @@ namespace Lab4._2MovieList
                 case 5:
                     foreach (MoviesDB item in movieList)
                     {
-                        if (item.superhero == true)
+                        if (item.getSuperhero() == true)
                         {
-                            Console.Write($"\n{counter} - {item.title}");
+                            Console.Write($"\n{counter} - {item.getTitle()}");
                             counter++;
                         }
                     }
@@ -256,7 +293,7 @@ namespace Lab4._2MovieList
             int counter = 1;
             foreach (MoviesDB item in movieList)
             {
-                Console.Write($"\n{counter} - {item.title} - {item.rating} stars");  //show movies and their ratings
+                Console.Write($"\n{counter} - {item.getTitle()} - {item.getRating()} stars");  //show movies and their ratings
                 counter++;
             }
         }
